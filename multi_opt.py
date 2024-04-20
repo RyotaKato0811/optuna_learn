@@ -25,6 +25,18 @@ for t in study.best_trials:
 """
 optuna.visualization.plot_pareto_front(
     study,
-    include_dominated_trials=True
-    #include_dominated_trials=False
+    include_dominated_trials=True # all trials
+    #include_dominated_trials=False #best trials
 ).show
+
+optuna.visualization.plot_slice(
+    study,
+    target = lambda t: t.values[0],
+    target_name = "Objective value 0",
+).show()
+
+optuna.visualization.plot_slice(
+    study,
+    target = lambda t: t.values[1],
+    target_name = "Objective value 1",
+).show()
