@@ -27,7 +27,7 @@ optuna.visualization.plot_pareto_front(
     study,
     include_dominated_trials=True # all trials
     #include_dominated_trials=False #best trials
-).show
+).show()
 
 optuna.visualization.plot_slice(
     study,
